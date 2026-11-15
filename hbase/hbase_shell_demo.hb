@@ -1,0 +1,25 @@
+list
+create 'student_s', 'info'
+put 'student_s', '2015001', 'info:name', 'Zhangsan'
+put 'student_s', '2015001', 'info:sex', 'male'
+put 'student_s', '2015001', 'info:age', '23'
+put 'student_s', '2015003', 'info:name', 'Mary'
+put 'student_s', '2015003', 'info:sex', 'female'
+put 'student_s', '2015003', 'info:age', '22'
+scan 'student_s'
+count 'student_s'
+describe 'student_s'
+alter 'student_s', {NAME => 'extra', VERSIONS => 1}
+describe 'student_s'
+alter 'student_s', 'delete' => 'extra'
+describe 'student_s'
+put 'student_s', '2015003', 'info:age', '24'
+get 'student_s', '2015003'
+delete 'student_s', '2015003'
+scan 'student_s'
+truncate 'student_s'
+count 'student_s'
+disable 'student_s'
+drop 'student_s'
+list
+exit
